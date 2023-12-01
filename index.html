@@ -4,38 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de NF-e</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
 </head>
 <body class="bg-secondary">
 <h1 class="text-center align-items-center bg-primary">Gerador de NF-e</h1>
-    <section class="container bg-light mt-5 d-flex flex-column rounded p-2" style="width: 500px;">
-        <label for="tomador_servico">Tomador do serviço ou Razão Social</label>
-        <input id="tomador_servico" type="text">
+    <section id="gerador">
+        <div class="container bg-light mt-5 d-flex flex-column rounded p-2" style="width: 500px;">
+            <label for="razao">Razão Social</label>
+            <input id="razao" type="text">
 
-        <label for="endereco">Endereço Completo</label>
-        <input type="text" id="endereco">
+            <label for="documento">CNPJ</label>
+            <input type="text" id="documento">
+    
+            <label for="endereco">Endereço Completo</label>
+            <input type="text" id="endereco">
+    
+            <label for="cliente">Cliente</label>
+            <input type="text" id="cliente">
 
-        <label for="cnpj">CPF ou CNPJ</label>
-        <input id="cpnj" type="text">
-
-        <label for="inscricao_municipal">Inscrição Municipal</label>
-        <input type="text" id="inscricao_municipal">
-
-        <label for="data">Data De Emissão</label>
-        <input type="date" id="data">
-
-        <label for="descricao">Descrição Dos Serviços</label>
-        <input type="text" id="descricao">
-
-        <label for="preco_unitario">Preço Unitário</label>
-        <input type="text" id="preco_unitario">
-
-        <label for="quantidade">Quantidade</label>
-        <input type="text" id="quantidade">
-
-        <button class="btn btn-primary mt-3">Gerar NF-e</button>
+            <label for="inscricao">Inscrição Municipal</label>
+            <input type="text" id="inscricao">
+    
+            <label for="data">Data De Emissão</label>
+            <input type="date" id="data">
+    
+            <label for="descricao">Descrição Dos Serviços</label>
+            <input type="text" id="descricao">
+    
+            <label for="precoUnitario">Preço Unitário</label>
+            <input type="number" id="precoUnitario">
+    
+            <label for="quantidade">Quantidade</label>
+            <input type="number" id="quantidade">
+    
+            <button class="btn btn-primary mt-3" onclick="gerarNota()">Gerar NF-e</button>
+        </div>
     </section>
+    <section id="nota">
+        <div id="notaFiscal">
+            <h2>Nota Fiscal de Serviço</h2>
+            <p><strong>Razão Social:</strong> <span id="nfRazao"></span></p>
+            <p><strong>Endereço:</strong> <span id="nfEndereco"></span></p>
+            <p><strong>CNPJ:</strong> <span id="nfCnpj"></span></p>
+            <p><strong>Inscrição Municipal:</strong> <span id="nfInscricao"></span></p>
+            <p><strong>Cliente:</strong> <span id="nfCliente"></span></p>
+            <p><strong>Serviço Prestado:</strong> <span id="nfServico"></span></p>
+            <p><strong>Valor do Serviço (R$):</strong> <span id="nfValor"></span></p>
+            <p><strong>Quantidade:</strong> <span id="nfQuantidade"></span></p>
+            <p><strong>Data:</strong> <span id="nfData"></span></p>
+            <p><strong>ISS (2%):</strong> R$ <span id="nfIss"></span></p>
+            <p><strong>ICMS (20%):</strong> R$ <span id="nfIcms"></span></p>
+            <p><strong>Total a Pagar:</strong> R$ <span id="nfTotal"></span></p>
+        </div>
+        <button class="btn btn-primary mt-3" onclick="mostarGerador()">Gerar outra NF-e</button>
+    </section>
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

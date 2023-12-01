@@ -1,0 +1,14 @@
+#notaFiscal{
+    background-color: aliceblue;
+    margin-top: 15px;
+    border-radius: 15px;
+    padding: 10px;
+}
+#nota{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+#gerador{
+    display: block;
+}
