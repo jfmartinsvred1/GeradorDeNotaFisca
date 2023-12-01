@@ -1,3 +1,4 @@
+
 function gerarNota(){
 var razao = document.getElementById('razao').value;
 var endereco = document.getElementById('endereco').value;
@@ -38,6 +39,7 @@ document.getElementById('gerador').style.display='none';
 function mostarGerador(){
 document.getElementById('gerador').style.display='block'
 document.getElementById('nota').style.display='none';
+window.location.reload(true);
 
 }
 
