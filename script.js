@@ -1,5 +1,6 @@
 
 function gerarNota(){
+//Obter elementos
 var razao = document.getElementById('razao').value;
 var endereco = document.getElementById('endereco').value;
 var documento = document.getElementById('documento').value;
@@ -10,6 +11,7 @@ var precoUnitario = document.getElementById('precoUnitario').value;
 var quantidade = document.getElementById('quantidade').value;
 var cliente = document.getElementById('cliente').value;
 
+//Cálculos 
 var valorTot=quantidade*precoUnitario
 
 var iss = valorTot * 0.02
@@ -18,6 +20,7 @@ var icms = valorTot * 0.20
 
 var tot = valorTot + iss + icms
 
+//Imprimir na tela
 document.getElementById('nfRazao').textContent=razao
 document.getElementById('nfEndereco').textContent=endereco
 document.getElementById('nfCnpj').textContent=documento
@@ -32,13 +35,15 @@ document.getElementById('nfIss').textContent=(iss.toFixed(2))
 document.getElementById('nfIcms').textContent=(icms.toFixed(2))
 
 
-
+//Trocar display
 document.getElementById('nota').style.display='flex';
 document.getElementById('gerador').style.display='none';
 }
 function mostarGerador(){
+//Reverter display
 document.getElementById('gerador').style.display='block'
 document.getElementById('nota').style.display='none';
+//Reload da pagina
 window.location.reload(true);
 
 }
